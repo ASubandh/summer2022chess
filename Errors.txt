@@ -1,0 +1,3 @@
+Queen isnt allowed to capture pieces in P v AI  -- fixed in Kirans version
+Pawn isnt allowed to move 2 spaces in P v AI -- fixed in Kirans version
+Randomly segfaults - is it when the AI makes a move that results in the king being checked?

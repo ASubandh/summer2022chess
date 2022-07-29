@@ -126,12 +126,12 @@ if (checkmate(check, Player_Turn_Color )==1){
     while (userinputStage == 1){
 		printf("Choose the place to move.");
 		scanf("%s",NewPositionText);
-   
-   
+
+
 //---------------------------------------------------------------------------------------------------------
 
 if (strcmp(CurPositionText, "scan")==0){
-	
+
   for (i=0; i<64; i++) {
 	  printf(" Type: %s, color: %s, firstmove: %d, index: %d \n", pieceNames[Pieces[i].TYPE], Colors[Pieces[i].Player.Color], Pieces[i].FirstMove, i);
     for (j=0; j<64; j++){
@@ -145,7 +145,7 @@ if (strcmp(CurPositionText, "scan")==0){
 }
 //----------------------------------------------------------------------------------------------------------
 
-   
+
 if (('a' <= NewPositionText[0] && 'h' >= NewPositionText[0])&&
     '1' <= NewPositionText[1] && '8' >= NewPositionText[1] && strlen(NewPositionText)==2){
 
