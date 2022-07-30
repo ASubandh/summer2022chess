@@ -210,6 +210,10 @@ void AIMove(){
     curpos = AIMoves->First;
     //printf("broke after curpos assignment \n");
     Chess_move *temp = AIMoves->First;
+    //confirmation of whether temp being null causes a segfault
+
+      /* code */
+
     int similarmoves = 0;
     //printf("seg fault before here");
     while(curpos){
@@ -220,9 +224,14 @@ void AIMove(){
         curpos = curpos->Next;
         //printf("doing stuff\n");
     }
-
+    //why exactly do i have similarmoves - does the program segfault when there are similarmoves?
     //more test statements
-    //printf("similarmoves = %d", similarmoves);
+    printf("similarmoves = %d", similarmoves);
+    if (!temp) {
+      printf("NULL before postion decided!\n" );
+    }
+
+    //is it over here?
     if (similarmoves == 0){
       //"randomizer"
       int randomMove = rand() % totalmoves;
@@ -231,16 +240,19 @@ void AIMove(){
       for(n=0; n<=randomMove; n++){
         temp = temp->Next;
       }
+      if(!temp){
+        printf("empty position!\n");
+      }
     }
 
    printf("AI move list generated\n");
-    //printf("Grand total of %d possible moves!\n",AIMoves->Length);
+   printf("Grand total of %d possible moves!\n",AIMoves->Length);
   //  printf("The best possible move is (%d,%d,%d)\n",temp->Cur_position,temp->New_position,temp->points);
      if(temp->Cur_position){
-       printf("theres something here!") ;
+       printf("theres something here!\n") ;
      }
      else{
-       printf("NULL!");
+       printf("NULL!\n");
      }
      sentcurposition = temp->Cur_position;
      sentnewposition = temp->New_position;
